@@ -30,13 +30,32 @@ app.get("/first", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-
+//quotes page
 app.get("/quotes", (req, res) => {
   res.sendFile(__dirname + "/quotes.html");
 });
 app.post("/quotes", (req, res) => {
   console.log(req.body);
 });
+
+//agent page
+app.get("/agent", (req, res) => {
+  res.sendFile(__dirname + "/agent.html");
+});
+app.post("/agent", (req, res) => {
+  console.log(req.body);
+});
+
+//crop page
+app.get("/crop", (req, res) => {
+  res.sendFile(__dirname + "/crop.html");
+});
+app.post("/crop", (req, res) => {
+  console.log(req.body);
+});
+
+
+
 
 app.get("/about", (req, res) => {
   // new
