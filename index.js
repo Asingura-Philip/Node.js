@@ -1,8 +1,19 @@
 //dependencies
 const express = require("express");
+const path = require('path')
 
 //instantiations
 const app = express();
+
+//configurations
+//import routes
+const studyRoutes = require('./routes/studyRoutes')
+
+//set view path
+app.set('views',path.join(__dirname,'views'))
+
+
+
 
 //middleware
 app.use(express.urlencoded({ extended: true }));
@@ -21,64 +32,13 @@ app.use('/about', (req, res, next) => {
 
 
 //routes
-app.get("/", (req, res) => {
-  // new
-  res.send("Homepage! Hello world.");
-});
-
-app.get("/first", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
-});
-
-//quotes page
-app.get("/quotes", (req, res) => {
-  res.sendFile(__dirname + "/quotes.html");
-});
-app.post("/quotes", (req, res) => {
-  console.log(req.body);
-});
-
-//agent page
-app.get("/agent", (req, res) => {
-  res.sendFile(__dirname + "/agent.html");
-});
-app.post("/agent", (req, res) => {
-  console.log(req.body);
-});
-
-//crop page
-app.get("/crop", (req, res) => {
-  res.sendFile(__dirname + "/crop.html");
-});
-app.post("/crop", (req, res) => {
-  console.log(req.body);
-});
+//use imported routes
+app.use('/',studyRoutes)
 
 
-
-
-app.get("/about", (req, res) => {
-  // new
-  res.send("About page. This is a node.js page with express.");
-});
-
-app.get("/details", (req, res) => {
-  res.send("these are member details");
-});
-
-app.post("/tell", (req, res) => {
-  res.send("tell me more");
-});
-
-app.put("/talk", (req, res) => {
-  res.send("this is put");
-});
-app.delete("/del", (req, res) => {
-  res.send("delete one");
-});
-app.get("*", (req, res) => {
-  res.send("Error!!!!. page not found");
-});
+// app.get("*", (req, res) => {
+//   res.send("Error!!!!. page not found");
+// });
 
 
 
