@@ -7,10 +7,17 @@ const app = express();
 
 //configurations
 //import routes
-const studyRoutes = require('./routes/studyRoutes')
+
 
 //set view path
-app.set('views',path.join(__dirname,'views'))
+//pug config
+app.set("view engine","pug");//specifies the view engine
+app.set("views",path.join(__dirname,"views"))//specify views directory
+
+const studyRoutes = require('./routes/studyRoutes')
+
+
+
 
 
 
@@ -36,9 +43,9 @@ app.use('/about', (req, res, next) => {
 app.use('/',studyRoutes)
 
 
-// app.get("*", (req, res) => {
-//   res.send("Error!!!!. page not found");
-// });
+app.get("*", (req, res) => {
+  res.send("Error!!!!. page not found");
+});
 
 
 

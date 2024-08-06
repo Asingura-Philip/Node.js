@@ -1,5 +1,5 @@
 const express = require("express");
-const path = require('path')
+const path = require("path");
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -7,13 +7,13 @@ router.get("/", (req, res) => {
   res.send("Homepage! Hello world.");
 });
 
-router.get("/first", (req, res) => {
+router.get("/house", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
 //quotes page
 router.get("/quotes", (req, res) => {
-  res.sendFile(path.join(__dirname ,"../views" ,"quotes.html"));
+  res.sendFile(path.join(__dirname, "../views", "quotes.html"));
 });
 router.post("/quotes", (req, res) => {
   console.log(req.body);
@@ -23,6 +23,7 @@ router.post("/quotes", (req, res) => {
 router.get("/agent", (req, res) => {
   res.sendFile(__dirname + "/agent.html");
 });
+
 router.post("/agent", (req, res) => {
   console.log(req.body);
 });
@@ -53,6 +54,17 @@ router.put("/talk", (req, res) => {
 });
 router.delete("/del", (req, res) => {
   res.send("delete one");
+});
+
+
+
+
+router.get("/first", (req, res) => {
+  res.render("index");
+});
+
+router.post("/first", (req, res) => {
+  console.log(req.body);
 });
 
 module.exports = router;
