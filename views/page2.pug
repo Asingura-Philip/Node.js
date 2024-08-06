@@ -1,0 +1,37 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/public/css/styles.css')
+  title Page 2
+form.form(action='' method='post')
+  .container
+    h1.title Answer some random questions
+    label(for='rNum') A random number
+    input(type='number' name='rNum')
+    br
+    p prefer to do
+    input(type='checkbox' name='movies')
+    label(for='movies') movies 
+    input(type='checkbox' name='series')
+    label(for='series') series 
+    input(type='checkbox' name='music')
+    label(for='music') music 
+    br
+    p Tea or coffee
+    input(type='radio' name='tea')
+    label(for='tea') Tea
+    input(type='radio' name='coffee')
+    label(for='coffee') Coffee
+    br
+    p can speak more than one langage
+    input(type='radio' name='yes')
+    label(for='yes') Yes
+    input(type='radio' name='no')
+    label(for='no') No
+    br
+    label(for='answer') A baby squirell is called
+    input(type='text' name='answer')
+    br
+    br
+    input(type='submit' value='SUBMIT')
