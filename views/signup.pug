@@ -1,0 +1,23 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/form.css')
+  title Document
+nav
+  h2 SIGN-UP PAGE
+div.container
+  form.form(action='' method='post')
+    label(for='NAME') Name
+    input(type='text' name='Name')
+    br
+    label(for='Password')  Set Password
+    input(type='password' name='Password')
+    br
+    label(for='Password')  Confirm Password
+    input(type='password' name='Confirm password')
+    br
+    input(type='submit' value='SUBMIT')
+  h3 Already have an account? Login here
+  a.link(href='/login')
+    h3 LOGIN
