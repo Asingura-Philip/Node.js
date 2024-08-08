@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
+//import models
+const Login = require('../models/crop')
 
 //login page
 router.get('/login',(req,res)=>{
@@ -8,8 +10,11 @@ router.get('/login',(req,res)=>{
 })
 
 router.post('/login',(req,res)=>{
+    const login = new Login(req.body)
+    login.save()
+    res.redirect('/register')
     console.log(req.body)
-    res.json(req.body)
+    
 })
 
 router.get('/signup',(req,res)=>{
