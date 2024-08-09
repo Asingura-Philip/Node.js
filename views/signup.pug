@@ -8,14 +8,17 @@ nav
   h2 SIGN-UP PAGE
 div.container
   form.form(action='' method='post')
-    label(for='NAME') Name
-    input(type='text' name='Name')
+    label(for='fullname') Name
+    input#fullname(type='text' name='fullname')
     br
-    label(for='Password')  Set Password
-    input(type='password' name='Password')
+    label(for='')  Set Password
+    input(type='password' name='password')
     br
-    label(for='Password')  Confirm Password
-    input(type='password' name='Confirm password')
+    label(for='')  Email
+    input(type='email' name='email')
+    br
+    label(for='')  Phone
+    input(type='text' name='phone')
     br
     input(type='submit' value='SUBMIT')
   h3 Already have an account? Login here

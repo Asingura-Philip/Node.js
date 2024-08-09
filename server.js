@@ -11,7 +11,8 @@ require("dotenv").config();
 const managerRoutes = require("./routes/managerRoutes");
 const studyRoutes = require("./routes/studyRoutes");
 const formRoutes = require("./routes/formRoutes");
-const loginModel = require("./models/crop")
+
+const authRoutes = require("./routes/authRoutes")
 //2.instantiations
 const app = express();
 const PORT = 3000;
@@ -46,7 +47,7 @@ app.use(express.json()); //capture data in json format
 app.use("/", managerRoutes);
 app.use("/", studyRoutes);
 app.use("/", formRoutes);
-
+app.use("/",authRoutes)
 
 app.get("*", (req, res) => {
   res.send("Error!!!!. page not found");
