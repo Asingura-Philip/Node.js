@@ -20,7 +20,7 @@ router.post("/signupauth",async(req,res)=>{
 })
 
 router.get('/registerauth',(req,res)=>{
-    res.render('register')
+    res.render('reg')
 })
 
 router.post('/registerauth',(req,res)=>{
