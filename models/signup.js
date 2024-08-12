@@ -5,18 +5,30 @@ const signupSchema = new mongoose.Schema({
         type:String,
         trim:true,
     },
-    password:{
+    email:{
         type:String,
         trim:true,
     },
-    email:{
+    username:{
         type:String,
         trim:true,
     },
     phone:{
         type:String,
         trim:true,
-    }
+    },
+    DOB:{
+        type:String,
+        trim:true,
+    },
+    password:{
+        type:String,
+        trim:true,
+    },
+    confirm:{
+        type:String,
+        trim:true,
+    },
     
 })
 
