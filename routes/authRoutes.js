@@ -23,9 +23,14 @@ router.get('/registerauth',(req,res)=>{
     res.render('reg')
 })
 
-router.post('/registerauth',(req,res)=>{
-    const newReg = new Register(req.body)
-    newReg.save()
+router.post('/registerauth',async(req,res)=>{
+    try{
+        const newReg = new Register(req.body)
+        await newReg.save()
+    }
+    catch(err){
+        res.end("AN ERROR OCCURED",err)
+    }
 })
 
 module.exports = router
