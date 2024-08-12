@@ -1,25 +1,50 @@
 body{
-    background-color:burlywood;
+    background-color:rgb(204, 164, 115);
 }
 .container{
     width: 500px;
     height: 700px;
     border: solid;
-    background-color: aquamarine;
+    border-radius: 10px;
+    background-color: rgb(152, 170, 164);
     margin: auto;
+    top: 30px;
     
 }
 .title{
-    font-size: 50px;
+    font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
 }
-.form{
-    font-size: 20px;
+label{
+    width: 230px;
+    display: inline-block;
+    text-align: right;
 }
-
+input{
+    margin-bottom: 10px;
+    height: 20px;
+}
+.form{
+    font-size: 25px;
+    height: 50%;
+}
+#subBtn{
+    margin-left: 40%;
+}
 .link{
     font-size: 25px;
     color: red;
+}
+
+.table{
+    border:solid black;
+    text-align: center;
+    /* margin-left: 0%; */
+    background-color: white;
+    font-size: 19px;
+}
+th,td{
+    border: solid black;
 }

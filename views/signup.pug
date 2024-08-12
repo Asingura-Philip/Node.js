@@ -4,23 +4,28 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='/css/form.css')
   title Document
-nav
-  h2 SIGN-UP PAGE
-div.container
+.container
   form.form(action='' method='post')
-    label(for='fullname') Name
-    input#fullname(type='text' name='fullname')
-    br
+    h2.title SIGN-UP PAGE
+    label(for='') Full name
+    input(type='text' name='fullname')
+    label(for='') Email
+    input(type='text' name='email')
+    label(for='') Desired Username
+    input(type='text' name='username')
+    label(for='') Phone
+    input(type='text' name='phone')
+    label(for='') Date Of Birth
+    input(type='text' name='DOB')
     label(for='')  Set Password
     input(type='password' name='password')
-    br
-    label(for='')  Email
-    input(type='email' name='email')
-    br
-    label(for='')  Phone
-    input(type='text' name='phone')
-    br
-    input(type='submit' value='SUBMIT')
+    label(for='')  Confirm Password
+    input(type='password' name='Confirm')
+    input#subBtn(type='submit' value='SUBMIT')
+  br
+  br
+  br
+  br
   h3 Already have an account? Login here
   a.link(href='/login')
     h3 LOGIN

@@ -4,10 +4,10 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='/css/form.css')
   title Document
-nav.title
-  h2 LOG IN PAGE
 .container
-  form#lForm.form(action='/login' method='post')
+  form#lForm.form(action='/views/login.html' method='post')
+    nav.title
+      h2 LOG IN PAGE
     label(for='') Name
     input#name(type='text' name='NAME')
     br
@@ -18,4 +18,4 @@ nav.title
   h3 Don&apos;t have an account? Create one here
   a.link(href='/signup')
     h3 SIGN-UP
-script(src='/public/js/login.js')
+script(src='/js/login.js')
