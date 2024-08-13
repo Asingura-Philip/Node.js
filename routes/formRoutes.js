@@ -5,17 +5,17 @@ const router = express.Router()
 const Login = require('../models/crop')
 
 //login page
-router.get('/login',(req,res)=>{
-    res.render("login")
-})
+// router.get('/login',(req,res)=>{
+//     res.render("login")
+// })
 
-router.post('/login',(req,res)=>{
-    const login = new Login(req.body)
-    login.save()
-    res.redirect('/register')
-    console.log(req.body)
+// router.post('/login',(req,res)=>{
+//     const login = new Login(req.body)
+//     login.save()
+//     res.redirect('/register')
+//     console.log(req.body)
     
-})
+// })
 
 router.get('/signup',(req,res)=>{
     res.render("signup")

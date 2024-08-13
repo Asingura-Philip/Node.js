@@ -5,17 +5,17 @@ head
   link(rel='stylesheet' href='/css/form.css')
   title Document
 .container
-  form#lForm.form(action='/views/login.html' method='post')
+  form#lForm.form(action='/loginauth' method='post')
     nav.title
       h2 LOG IN PAGE
-    label(for='') Name
-    input#name(type='text' name='NAME')
+    label(for='') Email
+    input#name(type='email' name='email')
     br
     label(for='') Password
-    input#pass(type='password' name='Password')
+    input#pass(type='password' name='password')
     br
     input#subBtn(type='submit' value='SUBMIT')
   h3 Don&apos;t have an account? Create one here
-  a.link(href='/signup')
+  a.link(href='/signupauth')
     h3 SIGN-UP
-script(src='/js/login.js')
+//- script(src='/js/login.js')

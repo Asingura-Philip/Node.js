@@ -3,10 +3,19 @@ const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
 
+const passport = require("passport");
+const expressSession = require("express-session")({
+secret: "secret",
+resave: false,
+saveUninitialized: false
+});
+
 require("dotenv").config();
 
 
+
 //import models
+const Signup = require('./models/signup')
 //import routes
 const managerRoutes = require("./routes/managerRoutes");
 const studyRoutes = require("./routes/studyRoutes");
@@ -41,6 +50,19 @@ app.set("views", path.join(__dirname, "views")); //specify views directory
 app.use(express.static(path.join(__dirname, "public"))); //specify folder for static files
 app.use(express.urlencoded({ extended: true })); //parse data
 app.use(express.json()); //capture data in json format
+
+// express session configs
+app.use(expressSession);
+app.use(passport.initialize());
+app.use(passport.session());
+
+// passport configs
+passport.use(Signup.createStrategy());
+passport.serializeUser(Signup.serializeUser());
+passport.deserializeUser(Signup.deserializeUser());
+
+
+
 
 // 5.routes
 //use imported routes
