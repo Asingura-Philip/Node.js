@@ -11,7 +11,7 @@ const signupSchema = new mongoose.Schema({
         trim:true,
         unique:true,
     },
-    username:{
+    role:{
         type:String,
         trim:true,
     },

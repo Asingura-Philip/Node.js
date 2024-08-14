@@ -17,7 +17,7 @@ body{
     display: flex;
     justify-content: center;
 }
-label{
+label {
     width: 230px;
     display: inline-block;
     text-align: right;
@@ -25,6 +25,12 @@ label{
 input{
     margin-bottom: 10px;
     height: 20px;
+}
+select{
+    margin-bottom: 10px;
+    height: 30px;
+    width: 33%;
+    
 }
 .form{
     font-size: 25px;

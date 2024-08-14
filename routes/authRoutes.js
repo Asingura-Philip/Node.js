@@ -50,10 +50,10 @@ router.get("/loginauth", (req, res) => {
 router.post("/loginauth", passport.authenticate("local", { failureRedirect: "/loginauth" }),
 (req, res) => {
 req.session.user = req.user; //assigning a session to a user who has logged in
-if(req.user.username === "jj"){
+if(req.user.role === "manager"){
 // res.redirect("/managerdashboard");
 res.send("Manager dashboard");
-} else if(req.user.username === "rick"){
+} else if(req.user.role === "salesAgent"){
 // res.redirect("/salesdashboard");
 res.send("Saleagent dashboard");
 } else {
