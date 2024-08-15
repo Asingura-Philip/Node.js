@@ -2,6 +2,9 @@ const express = require("express");
 // const path = require("path");
 const router = express.Router();
 
+
+
+
 //page 1
 router.get("/page1", (req, res) => {
   res.render("page1");

@@ -7,15 +7,21 @@ head
 .container
   table.table
     h2.title OUR NEW USERS
-    tr
-      th FULLNAME
-      th EMAIL
-      th USERNAME
-      th PHONE
-      th DOB
-    tr
-      td Tom Cat
-      td tcat@walt.com
-      td Tom
-      td 9090110
-      td 21-03-1997
+    thead
+      tr
+        th FULLNAME
+        th EMAIL
+        th ROLE
+        th PHONE
+        th DOB
+    tbody
+    if allUsers.length 
+    each user in allUsers
+      tr
+        td #{user.fullname}
+        td #{user.email}
+        td #{user.role}
+        td #{user.phone}
+        td #{user.DOB}
+    else 
+      p no produce yet :(

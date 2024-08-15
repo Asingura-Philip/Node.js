@@ -51,8 +51,8 @@ router.post("/loginauth", passport.authenticate("local", { failureRedirect: "/lo
 (req, res) => {
 req.session.user = req.user; //assigning a session to a user who has logged in
 if(req.user.role === "manager"){
-// res.redirect("/managerdashboard");
-res.send("Manager dashboard");
+res.redirect("/profile");
+// res.send("Manager dashboard");
 } else if(req.user.role === "salesAgent"){
 // res.redirect("/salesdashboard");
 res.send("Saleagent dashboard");
@@ -88,7 +88,14 @@ router.post("/registerauth", async (req, res) => {
   }
 });
 
-
+router.get('/profile', async(req,res)=>{
+  try{
+    const users = await Signup.find();
+    res.render("profile",{allUsers:users})
+  }catch(err){
+    res.status(400).send("unable to send")
+  }
+})
 /*
 
 router.get("/makeSale", (req, res) => {

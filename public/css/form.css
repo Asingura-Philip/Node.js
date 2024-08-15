@@ -2,7 +2,7 @@ body{
     background-color:rgb(204, 164, 115);
 }
 .container{
-    width: 500px;
+    width: 35%;
     height: 700px;
     border: solid;
     border-radius: 10px;
