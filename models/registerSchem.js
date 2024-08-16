@@ -6,16 +6,16 @@ const registerSchema = new mongoose.Schema({
         type:String,
         trim:true,
     },
-    price:{
+    type:{
         type:String,
         trim:true,
     },
     quantity:{
-        type:String,
+        type:Number,
         trim:true,
     },
     price:{
-        type:String,
+        type:Number,
         trim:true,
     },
     agent:{

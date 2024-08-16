@@ -1,0 +1,31 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Crop list
+table
+  thead
+    tr
+      th Crop
+      th Crop type
+      th  quantity
+      th Price
+      th Agent name
+      th Action
+  tbody
+  if allCrops.length 
+  each crop in allCrops
+    tr
+      td #{crop.crop}
+      td #{crop.type}
+      td #{crop.quantity}
+      td #{crop.price}
+      td #{crop.agent}
+      td 
+        a(href="/update-user/"+crop._id class="edit-btn") Edit
+      td 
+        form(method="POST" action="/delete-user")
+          input(type="hidden" placeholder="" Name="id" value=crop._id )
+          button(class="delete-btn" type="submit") Delete
+  else 
+    p no crops yet 

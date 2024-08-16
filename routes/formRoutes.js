@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 //import models
-const Login = require('../models/crop')
+const Register = require('../models/registerSchem')
 
 //login page
 // router.get('/login',(req,res)=>{
@@ -25,13 +25,24 @@ router.post('/signup',(req,res)=>{
     console.log(req.body)
     
 })
+
+
 router.get('/register',(req,res)=>{
+    
     res.render('register')
 }) 
 router.post('/register',(req,res)=>{
+    const crop = new Register(req.body)
+    crop.save()
     console.log(req.body)
-    // res.json(req.body)
-    res.render("confirm")
+    res.redirect("/crops")
+    // res.render("confirm")
 })
+
+router.get("/crops" ,async(req,res)=>{
+    const crops = await Register.find()
+    res.render("croplist",{allCrops:crops})
+})
+
 
 module.exports = router;
