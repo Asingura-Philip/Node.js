@@ -99,8 +99,6 @@ router.get('/profile', async(req,res)=>{
 
 
 
-
-
 // // get produce update form
 // router.get("/updateProduce/:id", async (req, res) => {
 //   try {

@@ -1,8 +1,8 @@
-const express = require('express')
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
 //import models
-const Register = require('../models/registerSchem')
+const Register = require("../models/registerSchem");
 
 //login page
 // router.get('/login',(req,res)=>{
@@ -14,35 +14,45 @@ const Register = require('../models/registerSchem')
 //     login.save()
 //     res.redirect('/register')
 //     console.log(req.body)
-    
+
 // })
 
-router.get('/signup',(req,res)=>{
-    res.render("signup")
-})
-router.post('/signup',(req,res)=>{
-    res.json(req.body)
-    console.log(req.body)
-    
-})
+router.get("/signup", (req, res) => {
+  res.render("signup");
+});
+router.post("/signup", (req, res) => {
+  res.json(req.body);
+  console.log(req.body);
+});
 
+router.get("/register", (req, res) => {
+  res.render("register");
+});
+router.post("/register", (req, res) => {
+  const crop = new Register(req.body);
+  crop.save();
+//   console.log(req.body);
+  res.redirect("/crops");
+  // res.render("confirm")
+});
 
-router.get('/register',(req,res)=>{
-    
-    res.render('register')
-}) 
-router.post('/register',(req,res)=>{
-    const crop = new Register(req.body)
-    crop.save()
-    console.log(req.body)
-    res.redirect("/crops")
-    // res.render("confirm")
-})
+router.get("/crops", async (req, res) => {
+  const crops = await Register.find();
+  res.render("croplist", { allCrops: crops });
+});
 
-router.get("/crops" ,async(req,res)=>{
-    const crops = await Register.find()
-    res.render("croplist",{allCrops:crops})
-})
+router.get("/updatecrop/:id", async (req, res) => {
+  const crop = await Register.findOne({ _id: req.params.id });
+  res.render("editcrop", { title: "update crop", crop: crop });
+});
 
-
+router.post("/updatecrop/:id", async (req, res) => {
+    try{
+        await Register.findOneAndUpdate({ _id: req.query.id }, req.body);
+        res.redirect("/crops");
+    }catch(err){
+        console.log("error occured",err)
+    }
+  
+});
 module.exports = router;

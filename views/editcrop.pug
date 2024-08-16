@@ -1,0 +1,26 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/form.css')
+  title Document
+nav
+  h2 REGISTER
+div
+  form(action='/updatecrop?id='+crop._id method='post')
+    label(for='') Crop Name
+    input(type='text' name="crop" value=crop.crop)
+    br
+    label(for='') Crop type
+    input(type='text' name="type" value=crop.type)
+    br
+    label(for='') Quantity
+    input(type='number' name="quantity" value=crop.quantity)
+    br
+    label(for='') Price
+    input(type='number' name="price" value=crop.price)
+    br
+    label(for='') Agent name
+    input(type='text' name="agent" value=crop.agent)
+    br
+    input(type='submit' value='SUBMIT')

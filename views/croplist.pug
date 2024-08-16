@@ -22,7 +22,7 @@ table
       td #{crop.price}
       td #{crop.agent}
       td 
-        a(href="/update-user/"+crop._id class="edit-btn") Edit
+        a(href="/updatecrop/"+crop._id) Edit
       td 
         form(method="POST" action="/delete-user")
           input(type="hidden" placeholder="" Name="id" value=crop._id )
