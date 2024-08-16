@@ -46,7 +46,7 @@ router.get("/updatecrop/:id", async (req, res) => {
   res.render("editcrop", { title: "update crop", crop: crop });
 });
 
-router.post("/updatecrop/:id", async (req, res) => {
+router.post("/updatecrop", async (req, res) => {
     try{
         await Register.findOneAndUpdate({ _id: req.query.id }, req.body);
         res.redirect("/crops");
@@ -55,4 +55,8 @@ router.post("/updatecrop/:id", async (req, res) => {
     }
   
 });
+router.post('/delete', async(req,res)=>{
+    await Register.deleteOne({_id: req.body.id});
+    res.redirect("back")
+})
 module.exports = router;
