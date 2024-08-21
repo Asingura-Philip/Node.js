@@ -2,8 +2,8 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-
 const passport = require("passport");
+const moment = require('moment')
 const expressSession = require("express-session")({
 secret: "secret",
 resave: false,
@@ -42,6 +42,7 @@ mongoose.connection
     console.error(`Connection error: ${err.message}`);
   });
 
+app.locals.moment = moment;
 //
 app.set("view engine", "pug"); //specifies the view engine
 app.set("views", path.join(__dirname, "views")); //specify views directory
