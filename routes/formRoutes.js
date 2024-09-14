@@ -3,6 +3,7 @@ const router = express.Router();
 
 //import models
 const Register = require("../models/registerSchem");
+const Form = require('../models/crop')
 
 //login page
 // router.get('/login',(req,res)=>{
@@ -53,10 +54,21 @@ router.post("/updatecrop", async (req, res) => {
     }catch(err){
         console.log("error occured",err)
     }
-  
 });
 router.post('/delete', async(req,res)=>{
     await Register.deleteOne({_id: req.body.id});
     res.redirect("back")
 })
+
+
+router.get('/form',(req,res)=>{
+  res.render("form")
+})
+
+router.post('/form',(req,res)=>{
+  const newForm = new Form(req.body)
+  newForm.save()
+  console.log(req.body)
+})
+
 module.exports = router;

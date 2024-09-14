@@ -1,13 +1,20 @@
-// const mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
-// const signupSchema = new mongoose.Schema({
-//     NAME:{
-//         type:String,
-//         trim:true,
-//     },
-//     Password:{
-//         type:String,
-//     },
-// })
+const formSchema = new mongoose.Schema({
+    name:{
+        type:String,
+        trim:true,
+    },
+    email:{
+        type:String,
+    },
+    occupation:{
+        type:String,
+    },
+    address:{
+        type:String,
+    },
 
-// module.exports = mongoose.model('Signup', signupSchema)
+})
+
+module.exports = mongoose.model('Form', formSchema)

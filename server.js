@@ -17,6 +17,7 @@ require("dotenv").config();
 //import models
 const Signup = require('./models/signup')
 const Crop = require('./models/registerSchem')
+const Form = require('./models/crop')
 //import routes
 const managerRoutes = require("./routes/managerRoutes");
 const studyRoutes = require("./routes/studyRoutes");
