@@ -1,0 +1,24 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+form#form(action='/form' method="post")
+  label(for='') name
+  input#name(type='text' name="name")
+  p#errName.error
+  br
+  label(for='') occupation
+  input#occupation(type='text' name="occupation")
+  p#errRole.error
+  br
+  label(for='') email
+  input#email(type='text' name="email")
+  p#errEmail.error
+  br
+  label(for='') address
+  input#address(type='text' name="address")
+  p#errAddress.error
+  br
+  input(type='submit' value='SUBMIT')
+script(src='../js/form.js')
